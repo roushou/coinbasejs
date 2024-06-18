@@ -1,0 +1,19 @@
+{
+  "name": "@coinbase-platform/onchain",
+  "version": "0.1.0",
+  "description": "Coinbase platform Onchain package",
+  "author": "roushou",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "typescript": ">=5.0.4"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "keywords": ["coinbase", "coinbase platform"]
+}
