@@ -1,9 +1,20 @@
 {
   "name": "@coinbase-platform/onchain",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Coinbase platform Onchain package",
-  "author": "roushou",
+  "author": "roushou <roushou9@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/roushou/coinbase-platform#readme",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roushou/coinbase-platform.git",
+    "directory": "packages/onchain"
+  },
+  "bugs": {
+    "url": "https://github.com/roushou/coinbase-platform/issues"
+  },
+  "keywords": ["coinbase", "coinbase platform"],
   "scripts": {
     "build": "tsup",
     "clean": "rimraf ./dist",
@@ -17,5 +28,16 @@
       "optional": true
     }
   },
-  "keywords": ["coinbase", "coinbase platform"]
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "files": ["src", "dist"],
+  "engine": {
+    "node": "^18.0.0 || >=20.0.0"
+  }
 }
