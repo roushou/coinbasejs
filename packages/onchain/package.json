@@ -14,10 +14,10 @@
   "bugs": {
     "url": "https://github.com/roushou/coinbase-platform/issues"
   },
-  "keywords": [
-    "coinbase",
-    "coinbase platform"
-  ],
+  "publishConfig": {
+    "@roushou:registry": "https://npm.pkg.github.com"
+  },
+  "keywords": ["coinbase", "coinbase platform"],
   "scripts": {
     "build": "tsup",
     "clean": "rimraf ./dist",
@@ -39,10 +39,7 @@
       }
     }
   },
-  "files": [
-    "src",
-    "dist"
-  ],
+  "files": ["src", "dist"],
   "engine": {
     "node": "^18.0.0 || >=20.0.0"
   }
