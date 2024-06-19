@@ -18,7 +18,7 @@
     "check:unsafe": "biome check . --write --unsafe",
     "ci": "biome ci .",
     "changeset:version": "changeset version",
-    "changeset:publish": "changeset publish"
+    "changeset:publish": "pnpm build && changeset publish"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.1",

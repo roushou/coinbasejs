@@ -6,6 +6,9 @@
   "license": "MIT",
   "homepage": "https://github.com/roushou/coinbase-platform#readme",
   "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/roushou/coinbase-platform.git",
@@ -19,7 +22,7 @@
   },
   "keywords": ["coinbase", "coinbase platform"],
   "scripts": {
-    "build": "tsup",
+    "build": "pnpm clean && tsup",
     "clean": "rimraf ./dist",
     "typecheck": "tsc --noEmit"
   },
@@ -37,7 +40,8 @@
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
       }
-    }
+    },
+    "./package.json": "./package.json"
   },
   "files": ["src", "dist"],
   "engine": {
