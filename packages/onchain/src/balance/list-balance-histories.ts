@@ -10,7 +10,7 @@ export type ListBalanceHistoriesResponse = {
   id: number;
   jsonrpc: string;
   result: {
-    balanceHistories: BalanceHistory[];
+    balanceHistories: BalanceHistory[] | null;
     nextPageToken?: string;
   };
 };
