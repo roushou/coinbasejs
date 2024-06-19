@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "pnpm --recursive build",
+    "clean": "pnpm --recursive clean",
     "typecheck": "pnpm --recursive typecheck",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -20,6 +22,8 @@
     "@types/node": "^20.14.5",
     "@vitest/ui": "^1.6.0",
     "msw": "^2.3.1",
+    "rimraf": "^5.0.7",
+    "tsup": "^8.1.0",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0"
   },

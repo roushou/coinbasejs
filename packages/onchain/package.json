@@ -5,6 +5,8 @@
   "author": "roushou",
   "type": "module",
   "scripts": {
+    "build": "tsup",
+    "clean": "rimraf ./dist",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
