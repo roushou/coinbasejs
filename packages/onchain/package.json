@@ -15,7 +15,7 @@
     "url": "https://github.com/roushou/coinbase-platform/issues"
   },
   "publishConfig": {
-    "@roushou:registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "keywords": ["coinbase", "coinbase platform"],
   "scripts": {
