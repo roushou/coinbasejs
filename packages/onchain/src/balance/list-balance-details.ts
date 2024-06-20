@@ -1,36 +1,14 @@
 import type { RpcClient, RpcRequestConfig } from "../rpc";
 
-type BalanceDetails = {
-  asset: {
-    id: string;
-    // TODO: Add all token types
-    type:
-      | "native"
-      | "erc20"
-      | "erc721"
-      | "erc1155"
-      | "creditAlphanum4"
-      | "fa2"
-      | (string & {});
-    groupId: string;
-    subGroupId: string;
-  };
-  value: number;
-};
-
-export type ListBalanceDetailsResponse = {
-  id: number;
-  jsonrpc: string;
-  result: {
-    balances: BalanceDetails[];
-    nextPageToken?: string;
-  };
-};
-
 export type ListBalanceDetailsParameters = Extract<
   RpcRequestConfig,
   { method: "cdp_listBalanceDetails" }
 >["parameters"];
+
+export type ListBalanceDetailsResponse = Extract<
+  RpcRequestConfig,
+  { method: "cdp_listBalanceDetails" }
+>["response"]["result"];
 
 /**
  * @returns The list of balance details of assets specified in parameters.
@@ -56,8 +34,9 @@ export async function listBalanceDetails(
   rpc: RpcClient,
   parameters: ListBalanceDetailsParameters,
 ): Promise<ListBalanceDetailsResponse> {
-  return await rpc.request({
+  const response = await rpc.request({
     method: "cdp_listBalanceDetails",
     parameters,
   });
+  return response.result;
 }

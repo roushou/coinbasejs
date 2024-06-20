@@ -1,24 +1,14 @@
 import type { RpcClient, RpcRequestConfig } from "../rpc";
 
-type BalanceHistory = {
-  blockHeight: number;
-  blockHash: string;
-  value: number;
-};
-
-export type ListBalanceHistoriesResponse = {
-  id: number;
-  jsonrpc: string;
-  result: {
-    balanceHistories: BalanceHistory[] | null;
-    nextPageToken?: string;
-  };
-};
-
 export type ListBalanceHistoriesParameters = Extract<
   RpcRequestConfig,
   { method: "cdp_listBalanceHistories" }
 >["parameters"];
+
+export type ListBalanceHistoriesResponse = Extract<
+  RpcRequestConfig,
+  { method: "cdp_listBalanceHistories" }
+>["response"]["result"];
 
 /**
  * @returns The list of balance histories of assets specified in parameters.
@@ -44,8 +34,9 @@ export async function listBalanceHistories(
   rpc: RpcClient,
   parameters: ListBalanceHistoriesParameters,
 ): Promise<ListBalanceHistoriesResponse> {
-  return await rpc.request({
+  const response = await rpc.request({
     method: "cdp_listBalanceHistories",
     parameters,
   });
+  return response.result;
 }

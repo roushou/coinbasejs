@@ -1,3 +1,8 @@
+export { listAddressTransactions } from "./address/list-address-transactions";
+export type {
+  ListAddressTransactionsResponse,
+  ListAddressTransactionsParameters,
+} from "./address/list-address-transactions";
 export { listBalances } from "./balance/list-balances";
 export type {
   ListBalancesParameters,
@@ -13,11 +18,6 @@ export type {
   ListBalanceHistoriesResponse,
   ListBalanceHistoriesParameters,
 } from "./balance/list-balance-histories";
-export { listAddressTransactions } from "./address/list-address-transactions";
-export type {
-  ListAddressTransactionsResponse,
-  ListAddressTransactionsParameters,
-} from "./address/list-address-transactions";
 export { createClient } from "./client";
 export type { Client, ClientConfig } from "./client";
 export { createRpcClient } from "./rpc";

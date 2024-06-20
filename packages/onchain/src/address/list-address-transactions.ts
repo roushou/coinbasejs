@@ -1,27 +1,14 @@
 import type { RpcClient, RpcRequestConfig } from "../rpc";
 
-type AddressTransaction = {
-  name: string;
-  hash: string;
-  blockHash: string;
-  blockHeight: string;
-  // TODO: can be narrowed to a union
-  status: string;
-};
-
-export type ListAddressTransactionsResponse = {
-  id: number;
-  jsonrpc: string;
-  result: {
-    addressTransactions: AddressTransaction[];
-    nextPageToken?: string;
-  };
-};
-
 export type ListAddressTransactionsParameters = Extract<
   RpcRequestConfig,
   { method: "cdp_listAddressTransactions" }
 >["parameters"];
+
+export type ListAddressTransactionsResponse = Extract<
+  RpcRequestConfig,
+  { method: "cdp_listAddressTransactions" }
+>["response"]["result"];
 
 /**
  * @returns The list of transactions of specified address.
@@ -46,8 +33,9 @@ export async function listAddressTransactions(
   rpc: RpcClient,
   parameters: ListAddressTransactionsParameters,
 ): Promise<ListAddressTransactionsResponse> {
-  return await rpc.request({
+  const response = await rpc.request({
     method: "cdp_listAddressTransactions",
     parameters,
   });
+  return response.result;
 }

@@ -3,7 +3,21 @@ import * as http from "./http";
 
 export type RpcClient = {
   __url: string;
-  request: <TResponse>(config: RpcRequestConfig) => Promise<TResponse>;
+  request: <
+    TConfig extends RpcRequestConfig,
+    TMethod extends RpcRequestConfig["method"],
+  >(
+    config: TConfig extends {
+      method: TMethod;
+      parameters: infer TParameters;
+    }
+      ? { method: TMethod; parameters: TParameters }
+      : never,
+  ) => Promise<
+    TConfig extends { method: TMethod; response: infer TResponse }
+      ? TResponse
+      : never
+  >;
 };
 
 export type RpcClientConfig = {
@@ -44,6 +58,10 @@ export type RpcRequestConfig =
         /** Number of balances to receive in a page. The default value is 25. The maximum value is 100, and values supplied over this will be coerced to the maximum. */
         pageSize?: number;
       }>;
+      response: BaseRpcResponse<{
+        addressTransactions: RpcAddressTransaction[];
+        nextPageToken?: string;
+      }>;
     }
   | {
       method: "cdp_listBalanceDetails";
@@ -54,6 +72,10 @@ export type RpcRequestConfig =
         pageToken?: string;
         /** Number of balances to receive in a page. The default value is 25. The maximum value is 100, and values supplied over this will be coerced to the maximum. */
         pageSize?: number;
+      }>;
+      response: BaseRpcResponse<{
+        balances: RpcBalanceDetails[];
+        nextPageToken?: string;
       }>;
     }
   | {
@@ -66,6 +88,10 @@ export type RpcRequestConfig =
         /** Number of balances to receive in a page. The default value is 25. The maximum value is 100, and values supplied over this will be coerced to the maximum. */
         pageSize?: number;
       }>;
+      response: BaseRpcResponse<{
+        balanceHistories: RpcBalanceHistory[] | null;
+        nextPageToken?: string;
+      }>;
     }
   | {
       method: "cdp_listBalances";
@@ -76,4 +102,65 @@ export type RpcRequestConfig =
         /** Number of balances to receive in a page. The default value is 25. The maximum value is 100, and values supplied over this will be coerced to the maximum. */
         pageSize?: number;
       }>;
+      response: BaseRpcResponse<{
+        balances: RpcBalance[];
+        nextPageToken?: string;
+      }>;
     };
+
+type BaseRpcResponse<TResult> = {
+  id: number;
+  jsonrpc: string;
+  result: TResult;
+};
+
+export type RpcAddressTransaction = {
+  name: string;
+  hash: string;
+  blockHash: string;
+  blockHeight: string;
+  // TODO: can be narrowed to a union
+  status: string;
+};
+
+export type RpcBalance = {
+  asset: {
+    id: string;
+    // TODO: Add all token types
+    type:
+      | "native"
+      | "erc20"
+      | "erc721"
+      | "erc1155"
+      | "creditAlphanum4"
+      | "fa2"
+      | (string & {});
+    groupId: string;
+    subGroupId: string;
+  };
+  value: number;
+};
+
+export type RpcBalanceDetails = {
+  asset: {
+    id: string;
+    // TODO: Add all token types
+    type:
+      | "native"
+      | "erc20"
+      | "erc721"
+      | "erc1155"
+      | "creditAlphanum4"
+      | "fa2"
+      | (string & {});
+    groupId: string;
+    subGroupId: string;
+  };
+  value: number;
+};
+
+export type RpcBalanceHistory = {
+  blockHeight: number;
+  blockHash: string;
+  value: number;
+};
