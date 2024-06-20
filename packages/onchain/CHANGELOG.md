@@ -1,5 +1,12 @@
 # @coinbase-platform/onchain
 
+## 0.1.2
+
+### Patch Changes
+
+- c2e80d3: fix: make rpc client correctly infer response type
+- 36fde94: fix: change `listBalanceHistories` return type
+
 ## 0.1.1
 
 ### Patch Changes
