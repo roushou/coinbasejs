@@ -29,4 +29,5 @@ export type {
   RpcBalanceHistory,
   RpcAddressTransaction,
   RpcBalanceDetails,
+  RpcTransaction,
 } from "./rpc";
