@@ -135,6 +135,7 @@ export type RpcAddressTransaction = {
   blockHeight: string;
   // TODO: can be narrowed to a union
   status: string;
+  ethereum: RpcTransaction;
 };
 
 export type RpcBalance = {
@@ -177,6 +178,87 @@ export type RpcBalanceHistory = {
   blockHeight: number;
   blockHash: string;
   value: number;
+};
+
+export type RpcTransaction = {
+  blockHash: string;
+  blockNumber: string;
+  from: string;
+  gas: string;
+  gasPrice: string;
+  hash: string;
+  input: string;
+  nonce: string;
+  to: string;
+  index: string;
+  value: string;
+  receipt: {
+    transactionHash: string;
+    transactionIndex: string;
+    blockHash: string;
+    blockNumber: string;
+    from: string;
+    to: string;
+    cumulativeGasUsed: string;
+    gasUsed: string;
+    contractAddress: string;
+    logs: Array<{
+      removed: boolean;
+      logIndex: string;
+      transactionHash: string;
+      transactionIndex: string;
+      blockHash: string;
+      blockNumber: string;
+      address: string;
+      data: string;
+      topics: string[];
+    }>;
+    logsBloom: string;
+    root: string;
+    status: string;
+    type: string;
+    effectiveGasPrice: string;
+  };
+  tokenTransfers: Array<{
+    tokenAddress: string;
+    fromAddress: string;
+    toAddress: string;
+    value: string;
+    transactionIndex: string;
+    transactionHash: string;
+    logIndex: string;
+    blockHash: string;
+    blockNumber: string;
+    erc721: {
+      fromAddress: string;
+      toAddress: string;
+      tokenId: string;
+    };
+  }>;
+  type: string;
+  priorityFeePerGas: string;
+  flattenedTraces: Array<{
+    error: string;
+    type: string;
+    from: string;
+    to: string;
+    value: string;
+    gas: string;
+    gasUsed: string;
+    input: string;
+    output: string;
+    subtraces: string;
+    traceAddress: [];
+    traceType: string;
+    callType: string;
+    traceId: string;
+    status: string;
+    blockHash: string;
+    blockNumber: string;
+    transactionHash: string;
+    transactionIndex: string;
+  }>;
+  blockTimestamp: string;
 };
 
 /**
