@@ -1,5 +1,11 @@
 # @coinbase-platform/onchain
 
+## 0.1.3
+
+### Patch Changes
+
+- c0acab0: fix: export rpc types
+
 ## 0.1.2
 
 ### Patch Changes
