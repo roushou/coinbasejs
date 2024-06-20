@@ -6,19 +6,19 @@
   "type": "module",
   "scripts": {
     "build": "pnpm --recursive build",
+    "check": "biome check . --write",
+    "check:unsafe": "biome check . --write --unsafe",
+    "changeset:version": "changeset version",
+    "changeset:publish": "pnpm build && changeset publish",
+    "ci": "biome ci .",
     "clean": "pnpm --recursive clean",
-    "typecheck": "pnpm --recursive typecheck",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:ui": "vitest --ui",
     "format": "biome format . --write",
     "lint": "biome lint . --write",
     "lint:unsafe": "biome lint . --write --unsafe",
-    "check": "biome check . --write",
-    "check:unsafe": "biome check . --write --unsafe",
-    "ci": "biome ci .",
-    "changeset:version": "changeset version",
-    "changeset:publish": "pnpm build && changeset publish"
+    "test": "vitest run",
+    "test:ui": "vitest --ui",
+    "test:watch": "vitest",
+    "typecheck": "pnpm --recursive typecheck"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.1",
