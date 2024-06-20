@@ -1,5 +1,5 @@
+import { RPC_URL } from "@coinbase-platform/utils/constants";
 import { describe, test } from "vitest";
-import { RPC_URL } from "../constants";
 import { createRpcClient } from "../rpc";
 import { listBalanceHistories } from "./list-balance-histories";
 

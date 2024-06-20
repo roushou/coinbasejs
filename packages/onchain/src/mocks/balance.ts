@@ -1,6 +1,6 @@
+import { RPC_URL } from "@coinbase-platform/utils/constants";
 import { http, HttpResponse } from "msw";
 import type { DefaultBodyType, PathParams } from "msw";
-import { RPC_URL } from "../constants";
 import { withRpcMethod } from "./predicates";
 
 export const handlers = [

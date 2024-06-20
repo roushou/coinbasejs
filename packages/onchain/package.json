@@ -26,6 +26,9 @@
     "clean": "rimraf ./dist",
     "typecheck": "tsc --noEmit"
   },
+  "devDependencies": {
+    "@coinbase-platform/utils": "workspace:*"
+  },
   "peerDependencies": {
     "typescript": ">=5.0.4"
   },

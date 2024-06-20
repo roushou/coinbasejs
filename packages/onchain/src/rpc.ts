@@ -1,5 +1,5 @@
-import { RPC_URL } from "./constants";
-import * as http from "./http";
+import { RPC_URL } from "@coinbase-platform/utils/constants";
+import * as http from "@coinbase-platform/utils/http";
 
 export type RpcClient = {
   __url: string;
