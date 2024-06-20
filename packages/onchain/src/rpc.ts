@@ -72,7 +72,7 @@ export type RpcRequestConfig =
         /** Number of balances to receive in a page. The default value is 25. The maximum value is 100, and values supplied over this will be coerced to the maximum. */
         pageSize?: number;
       }>;
-      response: BaseRpcResponse<{
+      response: RpcResponse<{
         addressTransactions: RpcAddressTransaction[];
         nextPageToken?: string;
       }>;
@@ -87,7 +87,7 @@ export type RpcRequestConfig =
         /** Number of balances to receive in a page. The default value is 25. The maximum value is 100, and values supplied over this will be coerced to the maximum. */
         pageSize?: number;
       }>;
-      response: BaseRpcResponse<{
+      response: RpcResponse<{
         balances: RpcBalanceDetails[];
         nextPageToken?: string;
       }>;
@@ -102,7 +102,7 @@ export type RpcRequestConfig =
         /** Number of balances to receive in a page. The default value is 25. The maximum value is 100, and values supplied over this will be coerced to the maximum. */
         pageSize?: number;
       }>;
-      response: BaseRpcResponse<{
+      response: RpcResponse<{
         balanceHistories: RpcBalanceHistory[] | null;
         nextPageToken?: string;
       }>;
@@ -116,13 +116,13 @@ export type RpcRequestConfig =
         /** Number of balances to receive in a page. The default value is 25. The maximum value is 100, and values supplied over this will be coerced to the maximum. */
         pageSize?: number;
       }>;
-      response: BaseRpcResponse<{
+      response: RpcResponse<{
         balances: RpcBalance[];
         nextPageToken?: string;
       }>;
     };
 
-type BaseRpcResponse<TResult> = {
+type RpcResponse<TResult> = {
   id: number;
   jsonrpc: string;
   result: TResult;
