@@ -1,5 +1,11 @@
 # @coinbase-platform/onchain
 
+## 0.1.4
+
+### Patch Changes
+
+- 556e5e6: chore: add JSDoc annotations
+
 ## 0.1.3
 
 ### Patch Changes
