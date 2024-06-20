@@ -1,5 +1,14 @@
 # @coinbase-platform/onchain
 
+## 0.1.5
+
+### Patch Changes
+
+- 545f1e2: fix: add missing transaction type in RPC response type
+- 1a178d4: fix: normalize RPC parameters
+- aed9a3a: chore: export `RpcTransaction` type
+- 825e1ee: chore: rename `BaseRpcResponse` to `RpcResponse`
+
 ## 0.1.4
 
 ### Patch Changes
