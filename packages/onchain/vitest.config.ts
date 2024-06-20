@@ -5,5 +5,9 @@ export default defineConfig({
     root: __dirname,
     environment: "node",
     setupFiles: ["./vitest.setup.ts"],
+    includeSource: ["src/**/*.ts"],
+  },
+  define: {
+    "import.meta.vitest": "undefined",
   },
 });

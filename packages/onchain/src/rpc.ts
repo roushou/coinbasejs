@@ -55,7 +55,7 @@ export function createRpcClient({
           jsonrpc: "2.0",
           id: 1,
           method: config.method,
-          params: config.parameters,
+          params: normalize(config.parameters),
         }),
       });
     },
@@ -178,3 +178,39 @@ export type RpcBalanceHistory = {
   blockHash: string;
   value: number;
 };
+
+/**
+ * Transforms addresses into lowercase.
+ *
+ * Reference: `https://docs.cdp.coinbase.com/onchain-data/docs/onchain-data-api/#parameters`
+ */
+function normalize(
+  parameters: RpcRequestConfig["parameters"],
+): RpcRequestConfig["parameters"] {
+  for (const element of parameters) {
+    element.address = element.address.toLowerCase();
+  }
+  return parameters;
+}
+
+if (import.meta.vitest) {
+  const { test, expect } = import.meta.vitest;
+
+  test("should transform addresses into lowercase", () => {
+    const parameters: RpcRequestConfig["parameters"] = [
+      {
+        address: "0x9C5940dFbd4633A67C60CfDC8B81E1d1916b4a08",
+        pageSize: 1,
+        pageToken: "page-token",
+      },
+    ];
+    const normalized = normalize(parameters);
+    for (let i = 0; i < parameters.length; i++) {
+      expect(normalized[i]).toStrictEqual({
+        address: parameters[i].address.toLowerCase(),
+        pageSize: parameters[i].pageSize,
+        pageToken: parameters[i].pageToken,
+      });
+    }
+  });
+}
