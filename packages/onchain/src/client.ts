@@ -21,15 +21,50 @@ import {
 import { createRpcClient } from "./rpc";
 
 export type Client = {
+  /**
+   * @example
+   *
+   * client.listAddressTransactions([{
+   *   address: 0x0e73fc61bb9d6b7588910c2d14e83bae68222c5d,
+   *   pageSize: 1,
+   * }]);
+   *
+   */
   listAddressTransactions: (
     parameters: ListAddressTransactionsParameters,
   ) => Promise<ListAddressTransactionsResponse>;
+  /**
+   * @example
+   *
+   * client.listBalanceDetails([{
+   *   address: "0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789",
+   *   assetId: "6ecc0dcc-10a2-500e-b315-a3b9abae19ce",
+   *   pageSize: 1,
+   * }]);
+   */
   listBalanceDetails: (
     parameters: ListBalanceDetailsParameters,
   ) => Promise<ListBalanceDetailsResponse>;
+  /**
+   * @example
+   *
+   * client.listBalanceHistories([{
+   *   address: "0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789",
+   *   assetId: "6ecc0dcc-10a2-500e-b315-a3b9abae19ce",
+   *   pageSize: 1,
+   * }]);
+   */
   listBalanceHistories: (
     parameters: ListBalanceHistoriesParameters,
   ) => Promise<ListBalanceHistoriesResponse>;
+  /**
+   * @example
+   *
+   * client.listBalances([{
+   *   address: "0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789",
+   *   pageSize: 1,
+   * }]);
+   */
   listBalances: (
     parameters: ListBalancesParameters,
   ) => Promise<ListBalancesResponse>;
@@ -44,6 +79,20 @@ export type ClientConfig = {
   rpcUrl?: string;
 };
 
+/**
+ * @returns The Client
+ *
+ * @param apiKey - Your API key
+ * @param rpcUrl - Your RPC url. Defaults to `https://api.developer.coinbase.com/rpc/v1/base`
+ *
+ * @example
+ *
+ * const client = createClient({
+ *   apiKey: API_KEY,
+ *   rpcUrl: "https://api.developer.coinbase.com/rpc/v1/base",
+ * });
+ *
+ */
 export function createClient(config: ClientConfig): Client {
   const rpcClient = createRpcClient({
     apiKey: config.apiKey,

@@ -29,6 +29,20 @@ export type RpcClientConfig = {
   url?: string;
 };
 
+/**
+ * @returns The RPC client
+ *
+ * @param apiKey - Your API key
+ * @param url - Your RPC url. Defaults to `https://api.developer.coinbase.com/rpc/v1/base`
+ *
+ * @example
+ *
+ * const rpcClient = createRpcClient({
+ *   apiKey: API_KEY,
+ *   rpcUrl: "https://api.developer.coinbase.com/rpc/v1/base",
+ * });
+ *
+ */
 export function createRpcClient({
   apiKey,
   url = RPC_URL,
