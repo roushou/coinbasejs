@@ -46,6 +46,16 @@ importers:
         specifier: workspace:*
         version: link:../utils
 
+  packages/paymaster:
+    dependencies:
+      typescript:
+        specifier: '>=5.0.4'
+        version: 5.4.5
+    devDependencies:
+      '@coinbase-platform/utils':
+        specifier: workspace:*
+        version: link:../utils
+
   packages/utils:
     dependencies:
       typescript:
