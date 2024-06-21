@@ -1,0 +1,12 @@
+{
+  "name": "@examples/onchain_list-balance-details",
+  "private": true,
+  "module": "index.ts",
+  "type": "module",
+  "dependencies": {
+    "@coinbase-platform/onchain": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

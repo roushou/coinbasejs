@@ -36,6 +36,56 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0(@types/node@20.14.5)(@vitest/ui@1.6.0)
 
+  examples/onchain_list-address-transactions:
+    dependencies:
+      '@coinbase-platform/onchain':
+        specifier: workspace:*
+        version: link:../../packages/onchain
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.4.5
+
+  examples/onchain_list-balance-details:
+    dependencies:
+      '@coinbase-platform/onchain':
+        specifier: workspace:*
+        version: link:../../packages/onchain
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.4.5
+
+  examples/onchain_list-balance-histories:
+    dependencies:
+      '@coinbase-platform/onchain':
+        specifier: workspace:*
+        version: link:../../packages/onchain
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.4.5
+
+  examples/onchain_list-balances:
+    dependencies:
+      '@coinbase-platform/onchain':
+        specifier: workspace:*
+        version: link:../../packages/onchain
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.4.5
+
+  examples/onchain_rpc-client:
+    dependencies:
+      '@coinbase-platform/onchain':
+        specifier: workspace:*
+        version: link:../../packages/onchain
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.4.5
+
   packages/onchain:
     dependencies:
       typescript:
