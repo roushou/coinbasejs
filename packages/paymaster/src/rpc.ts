@@ -7,8 +7,7 @@ export type RpcClient = {
     TConfig extends RpcRequestConfig,
     TMethod extends RpcRequestConfig["method"],
   >(
-    config: TConfig extends {
-      method: TMethod;
+    config: Extract<TConfig, { method: TMethod }> extends {
       parameters: infer TParameters;
     }
       ? { method: TMethod; parameters: TParameters }
