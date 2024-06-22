@@ -86,6 +86,36 @@ importers:
         specifier: ^5.0.0
         version: 5.4.5
 
+  examples/paymaster_get-supported-entry-points:
+    dependencies:
+      '@coinbase-platform/paymaster':
+        specifier: workspace:*
+        version: link:../../packages/paymaster
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.4.5
+
+  examples/paymaster_get-user-operation-by-hash:
+    dependencies:
+      '@coinbase-platform/paymaster':
+        specifier: workspace:*
+        version: link:../../packages/paymaster
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.4.5
+
+  examples/paymaster_get-user-operation-receipt:
+    dependencies:
+      '@coinbase-platform/paymaster':
+        specifier: workspace:*
+        version: link:../../packages/paymaster
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.4.5
+
   packages/onchain:
     dependencies:
       typescript:

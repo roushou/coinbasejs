@@ -1,0 +1,16 @@
+{
+  "name": "@examples/paymaster_get-user-operation-by-hash",
+  "private": true,
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf ./node_modules",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@coinbase-platform/paymaster": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
