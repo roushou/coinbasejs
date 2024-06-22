@@ -54,7 +54,8 @@ export function createRpcClient({
           jsonrpc: "2.0",
           id: 1,
           method: config.method,
-          params: config.parameters,
+          // Fallback to empty array because that's the minimum accepted by Coinbase API
+          params: config.parameters ?? [],
         }),
       });
     },
