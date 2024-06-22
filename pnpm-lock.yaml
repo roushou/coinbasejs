@@ -36,6 +36,56 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0(@types/node@20.14.5)(@vitest/ui@1.6.0)
 
+  examples/commerce_create-charge:
+    dependencies:
+      '@coinbase-platform/commerce':
+        specifier: workspace:*
+        version: link:../../packages/commerce
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.4.5
+
+  examples/commerce_create-checkout:
+    dependencies:
+      '@coinbase-platform/commerce':
+        specifier: workspace:*
+        version: link:../../packages/commerce
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.4.5
+
+  examples/commerce_get-charges:
+    dependencies:
+      '@coinbase-platform/commerce':
+        specifier: workspace:*
+        version: link:../../packages/commerce
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.4.5
+
+  examples/commerce_get-checkouts:
+    dependencies:
+      '@coinbase-platform/commerce':
+        specifier: workspace:*
+        version: link:../../packages/commerce
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.4.5
+
+  examples/commerce_get-events:
+    dependencies:
+      '@coinbase-platform/commerce':
+        specifier: workspace:*
+        version: link:../../packages/commerce
+    devDependencies:
+      typescript:
+        specifier: ^5.0.0
+        version: 5.4.5
+
   examples/onchain_list-address-transactions:
     dependencies:
       '@coinbase-platform/onchain':
@@ -115,6 +165,16 @@ importers:
       typescript:
         specifier: ^5.0.0
         version: 5.4.5
+
+  packages/commerce:
+    dependencies:
+      typescript:
+        specifier: '>=5.0.4'
+        version: 5.4.5
+    devDependencies:
+      '@coinbase-platform/utils':
+        specifier: workspace:*
+        version: link:../utils
 
   packages/onchain:
     dependencies:

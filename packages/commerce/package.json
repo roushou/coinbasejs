@@ -1,0 +1,53 @@
+{
+  "name": "@coinbase-platform/commerce",
+  "version": "0.0.0",
+  "description": "Coinbase Platform Commerce package",
+  "author": "roushou <roushou9@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/roushou/coinbase-platform#readme",
+  "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roushou/coinbase-platform.git",
+    "directory": "packages/commerce"
+  },
+  "bugs": {
+    "url": "https://github.com/roushou/coinbase-platform/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": ["coinbase", "coinbase platform"],
+  "scripts": {
+    "build": "pnpm clean && tsup",
+    "clean": "rimraf ./dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@coinbase-platform/utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "typescript": ">=5.0.4"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["src", "dist"],
+  "engine": {
+    "node": "^18.0.0 || >=20.0.0"
+  }
+}
