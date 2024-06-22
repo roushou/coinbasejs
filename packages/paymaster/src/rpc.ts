@@ -156,7 +156,7 @@ export type RpcRequestConfig =
 
 type UserOperation = {
   sender: string;
-  nonce: number;
+  nonce: string;
   initCode: string;
   callData: string;
   callGasLimit: string;
