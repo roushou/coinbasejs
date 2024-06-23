@@ -4,6 +4,12 @@
 
 ### Minor Changes
 
+- e4f50d4: feat: add `coinbasejs` package
+
+## 0.1.0
+
+### Minor Changes
+
 - e364617: feat: create Coinbase Developer Platform packages
 
   - Onchain
