@@ -7,9 +7,7 @@
   "private": true,
   "homepage": "https://github.com/roushou/coinbasejs#readme",
   "type": "module",
-  "files": [
-    "src"
-  ],
+  "files": ["src"],
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
