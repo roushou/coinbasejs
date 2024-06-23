@@ -1,6 +1,6 @@
 {
   "name": "@coinbasejs/onchain",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Coinbase Developer Platform Onchain package",
   "author": "roushou <roushou9@gmail.com>",
   "license": "MIT",
@@ -20,7 +20,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": ["coinbase", "coinbase platform", "coinbase developer platform"],
+  "keywords": [
+    "coinbase",
+    "coinbase platform",
+    "coinbase developer platform"
+  ],
   "scripts": {
     "build": "pnpm clean && tsup",
     "clean": "rimraf ./dist",
@@ -46,7 +50,10 @@
     },
     "./package.json": "./package.json"
   },
-  "files": ["src", "dist"],
+  "files": [
+    "src",
+    "dist"
+  ],
   "engine": {
     "node": "^18.0.0 || >=20.0.0"
   }

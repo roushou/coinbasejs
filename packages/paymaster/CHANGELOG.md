@@ -4,6 +4,16 @@
 
 ### Minor Changes
 
+- e364617: feat: create Coinbase Developer Platform packages
+
+  - Onchain
+  - Paymaster
+  - Commerce
+
+## 0.1.0
+
+### Minor Changes
+
 - f57da62: feat: add `paymaster` package
 - 546ebc6: feat: add Paymaster client
 
