@@ -1,0 +1,19 @@
+examples:
+- changed-files:
+  - any-glob-to-any-file: examples/**
+
+'pkg: commerce':
+- changed-files:
+  - any-glob-to-any-file: packages/commerce/**
+
+'pkg: onchain':
+- changed-files:
+  - any-glob-to-any-file: packages/onchain/**
+
+'pkg: paymaster':
+- changed-files:
+  - any-glob-to-any-file: packages/paymaster/**
+
+'pkg: utils':
+- changed-files:
+  - any-glob-to-any-file: packages/utils/**
