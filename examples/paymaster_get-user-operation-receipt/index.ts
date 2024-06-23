@@ -1,4 +1,4 @@
-import { createClient } from "@coinbase-platform/paymaster";
+import { createClient } from "@coinbasejs/paymaster";
 
 const apiKey = process.env.API_KEY;
 if (!apiKey) throw new Error("API_KEY not found");

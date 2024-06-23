@@ -1,4 +1,4 @@
-import { getCheckout, getCheckouts } from "@coinbase-platform/commerce";
+import { getCheckout, getCheckouts } from "@coinbasejs/commerce";
 
 const apiKey = process.env.API_KEY;
 if (!apiKey) throw new Error("API_KEY not found");

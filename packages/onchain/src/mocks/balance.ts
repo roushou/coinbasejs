@@ -1,4 +1,4 @@
-import { RPC_URL } from "@coinbase-platform/utils/constants";
+import { RPC_URL } from "@coinbasejs/utils/constants";
 import { http, HttpResponse } from "msw";
 import type { DefaultBodyType, PathParams } from "msw";
 import { withRpcMethod } from "./predicates";

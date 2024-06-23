@@ -1,4 +1,4 @@
-import * as http from "@coinbase-platform/utils/http";
+import * as http from "@coinbasejs/utils/http";
 import type { Charge } from "./charge";
 import type { Checkout } from "./checkout";
 import { BASE_URL } from "./constants";

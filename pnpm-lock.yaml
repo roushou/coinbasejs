@@ -38,7 +38,7 @@ importers:
 
   examples/commerce_create-charge:
     dependencies:
-      '@coinbase-platform/commerce':
+      '@coinbasejs/commerce':
         specifier: workspace:*
         version: link:../../packages/commerce
     devDependencies:
@@ -48,7 +48,7 @@ importers:
 
   examples/commerce_create-checkout:
     dependencies:
-      '@coinbase-platform/commerce':
+      '@coinbasejs/commerce':
         specifier: workspace:*
         version: link:../../packages/commerce
     devDependencies:
@@ -58,7 +58,7 @@ importers:
 
   examples/commerce_get-charges:
     dependencies:
-      '@coinbase-platform/commerce':
+      '@coinbasejs/commerce':
         specifier: workspace:*
         version: link:../../packages/commerce
     devDependencies:
@@ -68,7 +68,7 @@ importers:
 
   examples/commerce_get-checkouts:
     dependencies:
-      '@coinbase-platform/commerce':
+      '@coinbasejs/commerce':
         specifier: workspace:*
         version: link:../../packages/commerce
     devDependencies:
@@ -78,7 +78,7 @@ importers:
 
   examples/commerce_get-events:
     dependencies:
-      '@coinbase-platform/commerce':
+      '@coinbasejs/commerce':
         specifier: workspace:*
         version: link:../../packages/commerce
     devDependencies:
@@ -88,7 +88,7 @@ importers:
 
   examples/onchain_list-address-transactions:
     dependencies:
-      '@coinbase-platform/onchain':
+      '@coinbasejs/onchain':
         specifier: workspace:*
         version: link:../../packages/onchain
     devDependencies:
@@ -98,7 +98,7 @@ importers:
 
   examples/onchain_list-balance-details:
     dependencies:
-      '@coinbase-platform/onchain':
+      '@coinbasejs/onchain':
         specifier: workspace:*
         version: link:../../packages/onchain
     devDependencies:
@@ -108,7 +108,7 @@ importers:
 
   examples/onchain_list-balance-histories:
     dependencies:
-      '@coinbase-platform/onchain':
+      '@coinbasejs/onchain':
         specifier: workspace:*
         version: link:../../packages/onchain
     devDependencies:
@@ -118,7 +118,7 @@ importers:
 
   examples/onchain_list-balances:
     dependencies:
-      '@coinbase-platform/onchain':
+      '@coinbasejs/onchain':
         specifier: workspace:*
         version: link:../../packages/onchain
     devDependencies:
@@ -128,7 +128,7 @@ importers:
 
   examples/onchain_rpc-client:
     dependencies:
-      '@coinbase-platform/onchain':
+      '@coinbasejs/onchain':
         specifier: workspace:*
         version: link:../../packages/onchain
     devDependencies:
@@ -138,7 +138,7 @@ importers:
 
   examples/paymaster_get-supported-entry-points:
     dependencies:
-      '@coinbase-platform/paymaster':
+      '@coinbasejs/paymaster':
         specifier: workspace:*
         version: link:../../packages/paymaster
     devDependencies:
@@ -148,7 +148,7 @@ importers:
 
   examples/paymaster_get-user-operation-by-hash:
     dependencies:
-      '@coinbase-platform/paymaster':
+      '@coinbasejs/paymaster':
         specifier: workspace:*
         version: link:../../packages/paymaster
     devDependencies:
@@ -158,7 +158,7 @@ importers:
 
   examples/paymaster_get-user-operation-receipt:
     dependencies:
-      '@coinbase-platform/paymaster':
+      '@coinbasejs/paymaster':
         specifier: workspace:*
         version: link:../../packages/paymaster
     devDependencies:
@@ -172,7 +172,7 @@ importers:
         specifier: '>=5.0.4'
         version: 5.4.5
     devDependencies:
-      '@coinbase-platform/utils':
+      '@coinbasejs/utils':
         specifier: workspace:*
         version: link:../utils
 
@@ -182,7 +182,7 @@ importers:
         specifier: '>=5.0.4'
         version: 5.4.5
     devDependencies:
-      '@coinbase-platform/utils':
+      '@coinbasejs/utils':
         specifier: workspace:*
         version: link:../utils
 
@@ -192,7 +192,7 @@ importers:
         specifier: '>=5.0.4'
         version: 5.4.5
     devDependencies:
-      '@coinbase-platform/utils':
+      '@coinbasejs/utils':
         specifier: workspace:*
         version: link:../utils
 

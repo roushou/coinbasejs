@@ -1,6 +1,6 @@
 {
-  "name": "@coinbase-plaform/monorepo",
-  "description": "Coinbase platform SDK",
+  "name": "@coinbasejs/monorepo",
+  "description": "Coinbase Developer Platform SDK",
   "version": "0.0.0",
   "private": true,
   "type": "module",

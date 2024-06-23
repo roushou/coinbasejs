@@ -1,4 +1,4 @@
-import * as http from "@coinbase-platform/utils/http";
+import * as http from "@coinbasejs/utils/http";
 import { BASE_URL } from "./constants";
 
 export type GetChargeResponse = {

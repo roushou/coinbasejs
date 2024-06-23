@@ -26,7 +26,7 @@ This is a TypeScript SDK for the [Coinbase Developer Platform](https://docs.cdp.
 
 ```ts
 // 1. Import modules
-import { createClient, createRpcClient } from "@coinbase-platform/onchain";
+import { createClient, createRpcClient } from "@coinbasejs/onchain";
 
 // 2. Create an RPC client
 const rpcClient = createRpcClient({

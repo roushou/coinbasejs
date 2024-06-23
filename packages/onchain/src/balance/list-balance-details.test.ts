@@ -1,4 +1,4 @@
-import { RPC_URL } from "@coinbase-platform/utils/constants";
+import { RPC_URL } from "@coinbasejs/utils/constants";
 import { describe, test } from "vitest";
 import { createRpcClient } from "../rpc";
 import { listBalanceDetails } from "./list-balance-details";

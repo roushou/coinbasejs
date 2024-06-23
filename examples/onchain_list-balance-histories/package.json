@@ -8,7 +8,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@coinbase-platform/onchain": "workspace:*"
+    "@coinbasejs/onchain": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.0.0"

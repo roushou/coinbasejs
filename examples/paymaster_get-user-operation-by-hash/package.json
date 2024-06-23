@@ -8,7 +8,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@coinbase-platform/paymaster": "workspace:*"
+    "@coinbasejs/paymaster": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.0.0"

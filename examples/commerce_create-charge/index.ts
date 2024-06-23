@@ -1,7 +1,7 @@
 import {
   type CreateChargeParameters,
   createCharge,
-} from "@coinbase-platform/commerce";
+} from "@coinbasejs/commerce";
 
 const apiKey = process.env.API_KEY;
 if (!apiKey) throw new Error("API_KEY not found");
