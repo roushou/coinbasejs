@@ -1,5 +1,11 @@
 # @coinbase-platform/onchain
 
+## 0.1.1
+
+### Patch Changes
+
+- 07ed96d: fix: rename package `coinbasejs` to `@coinbasejs/sdk`
+
 ## 0.1.0
 
 ### Minor Changes
