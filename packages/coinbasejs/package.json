@@ -1,0 +1,74 @@
+{
+  "name": "coinbasejs",
+  "version": "0.0.0",
+  "description": "Coinbase Developer Platform",
+  "author": "roushou <roushou9@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/roushou/coinbasejs#readme",
+  "type": "module",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roushou/coinbasejs.git",
+    "directory": "packages/coinbasejs"
+  },
+  "bugs": {
+    "url": "https://github.com/roushou/coinbasejs/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "coinbase",
+    "coinbase platform",
+    "coinbase developer platform"
+  ],
+  "scripts": {
+    "build": "pnpm clean && tsup",
+    "clean": "rimraf ./dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@coinbasejs/commerce": "workspace:*",
+    "@coinbasejs/onchain": "workspace:*",
+    "@coinbasejs/paymaster": "workspace:*"
+  },
+  "peerDependencies": {
+    "typescript": ">=5.0.4"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "exports": {
+    "./onchain": {
+      "import": {
+        "types": "./dist/onchain.d.ts",
+        "default": "./dist/onchain.js"
+      }
+    },
+    "./commerce": {
+      "import": {
+        "types": "./dist/commerce.d.ts",
+        "default": "./dist/commerce.js"
+      }
+    },
+    "./paymaster": {
+      "import": {
+        "types": "./dist/paymaster.d.ts",
+        "default": "./dist/paymaster.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "engine": {
+    "node": "^18.0.0 || >=20.0.0"
+  }
+}

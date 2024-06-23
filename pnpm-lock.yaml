@@ -166,6 +166,22 @@ importers:
         specifier: ^5.0.0
         version: 5.4.5
 
+  packages/coinbasejs:
+    dependencies:
+      typescript:
+        specifier: '>=5.0.4'
+        version: 5.4.5
+    devDependencies:
+      '@coinbasejs/commerce':
+        specifier: workspace:*
+        version: link:../commerce
+      '@coinbasejs/onchain':
+        specifier: workspace:*
+        version: link:../onchain
+      '@coinbasejs/paymaster':
+        specifier: workspace:*
+        version: link:../paymaster
+
   packages/commerce:
     dependencies:
       typescript:
