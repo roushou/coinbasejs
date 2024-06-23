@@ -1,5 +1,5 @@
 {
-  "name": "coinbasejs",
+  "name": "@coinbasejs/sdk",
   "version": "0.1.0",
   "description": "Coinbase Developer Platform",
   "author": "roushou <roushou9@gmail.com>",
