@@ -15,7 +15,7 @@ const parameters: CreateCheckoutParameters = {
     currency: "USD",
   },
   logo_url: "",
-  requested_info: [],
+  requested_info: ["name", "email"],
 };
 
 const response = await createCheckout(parameters, apiKey);
