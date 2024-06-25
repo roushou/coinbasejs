@@ -4,7 +4,8 @@ layout: home
 
 hero:
   name: "coinbasejs"
-  tagline: Build powerful applications on top of the Coinbase Developer Platform
+  text: TypeScript SDK
+  tagline: Build robust, type-safe applications on top of the Coinbase Developer Platform
   actions:
     - theme: brand
       text: Get started
@@ -16,11 +17,19 @@ hero:
       rel: noopener noreferrer
 
 features:
-  - title: Modular
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Lightweight
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Type Safe
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
----
+  - title: Intuitive
+    details: Get up and running quickly with an intuitive API and focus on building great products
+    icon: 💡
 
+  - title: Modular
+    details: Use only what you need and keep your codebase lean and efficient with reusable modules
+    icon: 🏗
+
+  - title: Lightweight
+    details: Modules are optimized for performance and small bundle size
+    icon: 📦
+
+  - title: Type Safe
+    details: Everything is typed for a reliable development
+    icon: 🔑
+---
