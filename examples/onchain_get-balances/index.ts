@@ -5,10 +5,10 @@ if (!apiKey) throw new Error("API_KEY not found");
 
 const client = createClient({ apiKey });
 
-const response = await client.listBalanceHistories([
+const response = await client.getBalances([
   {
-    address: "0x0e73fc61bb9d6b7588910c2d14e83bae68222c5d",
-    assetId: "123d82ca-b3f4-527c-ace7-559d5791a564",
+    address: "0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789",
+    pageSize: 1,
   },
 ]);
 

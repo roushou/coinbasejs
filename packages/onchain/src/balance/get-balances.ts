@@ -1,11 +1,11 @@
 import type { RpcClient, RpcRequestConfig } from "../rpc";
 
-export type ListBalancesParameters = Extract<
+export type GetBalancesParameters = Extract<
   RpcRequestConfig,
   { method: "cdp_listBalances" }
 >["parameters"];
 
-export type ListBalancesResponse = Extract<
+export type GetBalancesResponse = Extract<
   RpcRequestConfig,
   { method: "cdp_listBalances" }
 >["response"]["result"];
@@ -14,7 +14,7 @@ export type ListBalancesResponse = Extract<
  * @returns The list of token balances specified in parameters.
  *
  * @param rpc - RPC Client {@link RpcClient}
- * @param parameters - List of assets to retrieve the balances {@link ListBalancesParameters}
+ * @param parameters - List of assets to retrieve the balances {@link GetBalancesParameters}
  *
  * @example
  *
@@ -23,16 +23,16 @@ export type ListBalancesResponse = Extract<
  *   rpcUrl: "https://api.developer.coinbase.com/rpc/v1/base",
  * });
  *
- * listBalances(rpcClient, [{
+ * getBalances(rpcClient, [{
  *   address: "0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789",
  *   pageSize: 1,
  * }]);
  *
  */
-export async function listBalances(
+export async function getBalances(
   rpc: RpcClient,
-  parameters: ListBalancesParameters,
-): Promise<ListBalancesResponse> {
+  parameters: GetBalancesParameters,
+): Promise<GetBalancesResponse> {
   const response = await rpc.request({
     method: "cdp_listBalances",
     parameters,

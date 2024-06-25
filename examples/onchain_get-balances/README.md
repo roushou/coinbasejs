@@ -1,4 +1,4 @@
-# List balances - Onchain Data
+# Get balances - Onchain Data
 
 Run
 

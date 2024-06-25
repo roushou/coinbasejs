@@ -1,5 +1,5 @@
 {
-  "name": "@examples/onchain_list-balance-histories",
+  "name": "@examples/onchain_get-balance-histories",
   "private": true,
   "module": "index.ts",
   "type": "module",

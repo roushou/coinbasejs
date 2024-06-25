@@ -1,73 +1,73 @@
 import {
-  type ListAddressTransactionsParameters,
-  type ListAddressTransactionsResponse,
-  listAddressTransactions,
-} from "./address/list-address-transactions";
+  type GetAddressTransactionsParameters,
+  type GetAddressTransactionsResponse,
+  getAddressTransactions,
+} from "./address/get-address-transactions";
 import {
-  type ListBalanceDetailsParameters,
-  type ListBalanceDetailsResponse,
-  listBalanceDetails,
-} from "./balance/list-balance-details";
+  type GetBalanceDetailsParameters,
+  type GetBalanceDetailsResponse,
+  getBalanceDetails,
+} from "./balance/get-balance-details";
 import {
-  type ListBalanceHistoriesParameters,
-  type ListBalanceHistoriesResponse,
-  listBalanceHistories,
-} from "./balance/list-balance-histories";
+  type GetBalanceHistoriesParameters,
+  type GetBalanceHistoriesResponse,
+  getBalancehistories,
+} from "./balance/get-balance-histories";
 import {
-  type ListBalancesParameters,
-  type ListBalancesResponse,
-  listBalances,
-} from "./balance/list-balances";
+  type GetBalancesParameters,
+  type GetBalancesResponse,
+  getBalances,
+} from "./balance/get-balances";
 import { createRpcClient } from "./rpc";
 
 export type Client = {
   /**
    * @example
    *
-   * client.listAddressTransactions([{
+   * client.getAddressTransactions([{
    *   address: 0x0e73fc61bb9d6b7588910c2d14e83bae68222c5d,
    *   pageSize: 1,
    * }]);
    *
    */
-  listAddressTransactions: (
-    parameters: ListAddressTransactionsParameters,
-  ) => Promise<ListAddressTransactionsResponse>;
+  getAddressTransactions: (
+    parameters: GetAddressTransactionsParameters,
+  ) => Promise<GetAddressTransactionsResponse>;
   /**
    * @example
    *
-   * client.listBalanceDetails([{
+   * client.getBalanceDetails([{
    *   address: "0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789",
    *   assetId: "6ecc0dcc-10a2-500e-b315-a3b9abae19ce",
    *   pageSize: 1,
    * }]);
    */
-  listBalanceDetails: (
-    parameters: ListBalanceDetailsParameters,
-  ) => Promise<ListBalanceDetailsResponse>;
+  getBalanceDetails: (
+    parameters: GetBalanceDetailsParameters,
+  ) => Promise<GetBalanceDetailsResponse>;
   /**
    * @example
    *
-   * client.listBalanceHistories([{
+   * client.getBalanceHistories([{
    *   address: "0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789",
    *   assetId: "6ecc0dcc-10a2-500e-b315-a3b9abae19ce",
    *   pageSize: 1,
    * }]);
    */
-  listBalanceHistories: (
-    parameters: ListBalanceHistoriesParameters,
-  ) => Promise<ListBalanceHistoriesResponse>;
+  getBalanceHistories: (
+    parameters: GetBalanceHistoriesParameters,
+  ) => Promise<GetBalanceHistoriesResponse>;
   /**
    * @example
    *
-   * client.listBalances([{
+   * client.getBalances([{
    *   address: "0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789",
    *   pageSize: 1,
    * }]);
    */
-  listBalances: (
-    parameters: ListBalancesParameters,
-  ) => Promise<ListBalancesResponse>;
+  getBalances: (
+    parameters: GetBalancesParameters,
+  ) => Promise<GetBalancesResponse>;
 };
 
 export type ClientConfig = {
@@ -100,17 +100,17 @@ export function createClient(config: ClientConfig): Client {
   });
 
   const client: Client = {
-    listAddressTransactions: async (parameters) => {
-      return await listAddressTransactions(rpcClient, parameters);
+    getAddressTransactions: async (parameters) => {
+      return await getAddressTransactions(rpcClient, parameters);
     },
-    listBalanceDetails: async (parameters) => {
-      return await listBalanceDetails(rpcClient, parameters);
+    getBalanceDetails: async (parameters) => {
+      return await getBalanceDetails(rpcClient, parameters);
     },
-    listBalanceHistories: async (parameters) => {
-      return await listBalanceHistories(rpcClient, parameters);
+    getBalanceHistories: async (parameters) => {
+      return await getBalancehistories(rpcClient, parameters);
     },
-    listBalances: async (parameters) => {
-      return await listBalances(rpcClient, parameters);
+    getBalances: async (parameters) => {
+      return await getBalances(rpcClient, parameters);
     },
   };
 

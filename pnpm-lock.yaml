@@ -86,7 +86,7 @@ importers:
         specifier: ^5.0.0
         version: 5.4.5
 
-  examples/onchain_list-address-transactions:
+  examples/onchain_get-address-transactions:
     dependencies:
       '@coinbasejs/onchain':
         specifier: workspace:*
@@ -96,7 +96,7 @@ importers:
         specifier: ^5.0.0
         version: 5.4.5
 
-  examples/onchain_list-balance-details:
+  examples/onchain_get-balance-details:
     dependencies:
       '@coinbasejs/onchain':
         specifier: workspace:*
@@ -106,7 +106,7 @@ importers:
         specifier: ^5.0.0
         version: 5.4.5
 
-  examples/onchain_list-balance-histories:
+  examples/onchain_get-balance-histories:
     dependencies:
       '@coinbasejs/onchain':
         specifier: workspace:*
@@ -116,7 +116,7 @@ importers:
         specifier: ^5.0.0
         version: 5.4.5
 
-  examples/onchain_list-balances:
+  examples/onchain_get-balances:
     dependencies:
       '@coinbasejs/onchain':
         specifier: workspace:*
