@@ -20,7 +20,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": ["coinbase", "coinbase platform", "coinbase developer platform"],
+  "keywords": [
+    "coinbase",
+    "coinbase platform",
+    "coinbase developer platform"
+  ],
   "scripts": {
     "build": "pnpm clean && tsup",
     "clean": "rimraf ./dist",
@@ -60,7 +64,10 @@
     },
     "./package.json": "./package.json"
   },
-  "files": ["src", "dist"],
+  "files": [
+    "src",
+    "dist"
+  ],
   "engine": {
     "node": "^18.0.0 || >=20.0.0"
   }
