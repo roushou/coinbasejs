@@ -7,6 +7,7 @@ export default defineConfig({
     "Build powerful applications on top of the Coinbase Developer Platform",
   themeConfig: {
     outline: [2, 3],
+    logo: "/logo.svg",
     search: {
       provider: "local",
     },
@@ -109,7 +110,7 @@ export default defineConfig({
     footer: {
       message: "Released under the MIT License.",
       copyright: "Copyright © 2024-present Roushou",
-    }
+    },
   },
   lastUpdated: true,
 });
