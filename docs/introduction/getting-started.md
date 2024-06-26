@@ -105,7 +105,7 @@ import { createClient } from "@coinbasejs/sdk/commerce";
 
 const client = createClient({ apiKey: "API_KEY" });
 
-const response = await client.listBalances([ // [!code focus:8]
+const response = await client.getBalances([ // [!code focus:8]
   {
     address: "0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789",
     pageSize: 1,
