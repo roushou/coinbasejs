@@ -1,10 +1,12 @@
 import { defineConfig } from "vitepress";
+import { version } from "../../packages/coinbasejs/package.json";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "coinbasejs",
   description:
-    "Build powerful applications on top of the Coinbase Developer Platform",
+    "Build robust, type-safe applications on top of the Coinbase Developer Platform",
+  lang: "en-US",
   themeConfig: {
     outline: [2, 3],
     logo: "/logo.svg",
@@ -19,6 +21,10 @@ export default defineConfig({
         link: "https://github.com/roushou/coinbasejs/tree/main/examples",
         target: "_blank",
         rel: "noopener noreferrer",
+      },
+      {
+        text: `v${version}`,
+        link: `https://github.com/roushou/coinbasejs/releases/tag/@coinbasejs/sdk@${version}`,
       },
     ],
     sidebar: [
@@ -103,6 +109,10 @@ export default defineConfig({
         ],
       },
     ],
+    editLink: {
+      pattern: "https://github.com/roushou/coinbasejs/edit/main/docs/:path",
+      text: "Suggest changes to this page",
+    },
     socialLinks: [
       { icon: "github", link: "https://github.com/roushou/coinbasejs" },
       { icon: "x", link: "https://x.com/roushou_" },
@@ -113,5 +123,39 @@ export default defineConfig({
     },
   },
   lastUpdated: true,
-  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+  head: [
+    ["link", { rel: "icon", href: "/favicon.ico" }],
+    ["link", { rel: "icon", href: "/logo.svg", type: "image/svg+xml" }],
+    ["meta", { property: "og:title", content: "coinbasejs" }],
+    [
+      "meta",
+      {
+        property: "og:description",
+        content:
+          "Build robust, type-safe applications on top of the Coinbase Developer Platform",
+      },
+    ],
+    ["meta", { name: "author", content: "Roushou" }],
+    [
+      "meta",
+      {
+        name: "keywords",
+        content:
+          "coinbase, coinbase platform, onchain, paymaster, commerce, cryptocurrency, typescript, esm",
+      },
+    ],
+    // ["meta", { property: "og:url", content: ogUrl }],
+    // ["meta", { property: "og:image", content: ogImage }],
+    ["meta", { name: "twitter:title", content: "coinbasejs" }],
+    [
+      "meta",
+      {
+        name: "twitter:description",
+        content:
+          "Build robust, type-safe applications on top of the Coinbase Developer Platform",
+      },
+    ],
+    // ["meta", { name: "twitter:image", content: ogImage }],
+    ["meta", { name: "twitter:card", content: "summary_large_image" }],
+  ],
 });
