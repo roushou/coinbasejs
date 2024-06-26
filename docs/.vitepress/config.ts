@@ -144,8 +144,11 @@ export default defineConfig({
           "coinbase, coinbase platform, onchain, paymaster, commerce, cryptocurrency, typescript, esm",
       },
     ],
-    // ["meta", { property: "og:url", content: ogUrl }],
-    // ["meta", { property: "og:image", content: ogImage }],
+    ["meta", { property: "og:url", content: "https://coinbasejs.com/" }],
+    [
+      "meta",
+      { property: "og:image", content: "https://coinbasejs.com/og.png" },
+    ],
     ["meta", { name: "twitter:title", content: "coinbasejs" }],
     [
       "meta",
@@ -155,7 +158,10 @@ export default defineConfig({
           "Build robust, type-safe applications on top of the Coinbase Developer Platform",
       },
     ],
-    // ["meta", { name: "twitter:image", content: ogImage }],
+    [
+      "meta",
+      { name: "twitter:image", content: "https://coinbasejs.com/og.png" },
+    ],
     ["meta", { name: "twitter:card", content: "summary_large_image" }],
   ],
 });
