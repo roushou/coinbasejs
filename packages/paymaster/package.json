@@ -1,6 +1,6 @@
 {
   "name": "@coinbasejs/paymaster",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Coinbase Developer Platform Paymaster package",
   "author": "roushou <roushou9@gmail.com>",
   "license": "MIT",
@@ -51,7 +51,10 @@
     },
     "./package.json": "./package.json"
   },
-  "files": ["src", "dist"],
+  "files": [
+    "src",
+    "dist"
+  ],
   "engine": {
     "node": "^18.0.0 || >=20.0.0"
   }
