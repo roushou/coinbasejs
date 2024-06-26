@@ -113,4 +113,5 @@ export default defineConfig({
     },
   },
   lastUpdated: true,
+  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
 });
