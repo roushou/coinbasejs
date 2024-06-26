@@ -20,6 +20,6 @@
     }
   },
   "files": {
-    "ignore": ["dist", "cache"]
+    "ignore": ["dist", "cache", ".wrangler"]
   }
 }

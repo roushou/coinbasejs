@@ -7,3 +7,7 @@ cache
 
 # Environment variables
 .env
+
+# Wrangler
+.wrangler
+.dev.vars
