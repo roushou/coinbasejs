@@ -1,5 +1,11 @@
 # @coinbase-platform/paymaster
 
+## 0.2.0
+
+### Minor Changes
+
+- 60a6005: feat: allow to pass network to clients
+
 ## 0.1.0
 
 ### Minor Changes
