@@ -20,7 +20,7 @@ export type GetBalancesResponse = Extract<
  *
  * const rpcClient = createRpcClient({
  *   apiKey: API_KEY,
- *   rpcUrl: "https://api.developer.coinbase.com/rpc/v1/base",
+ *   network: "base",
  * });
  *
  * getBalances(rpcClient, [{
