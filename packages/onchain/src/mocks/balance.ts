@@ -5,7 +5,7 @@ import { withRpcMethod } from "./predicates";
 
 export const handlers = [
   http.post(
-    `${RPC_URL}/API_KEY`,
+    `${RPC_URL}/base/API_KEY`,
     withRpcMethod({ method: "cdp_listBalanceDetails" }, async () => {
       return HttpResponse.json({
         id: 1,
@@ -28,7 +28,7 @@ export const handlers = [
     }),
   ),
   http.post(
-    `${RPC_URL}/API_KEY`,
+    `${RPC_URL}/base/API_KEY`,
     withRpcMethod({ method: "cdp_listBalanceHistories" }, async () => {
       return HttpResponse.json({
         id: 1,
@@ -47,7 +47,7 @@ export const handlers = [
     }),
   ),
   http.post<PathParams, { method: string }, DefaultBodyType>(
-    `${RPC_URL}/API_KEY`,
+    `${RPC_URL}/base/API_KEY`,
     withRpcMethod({ method: "cdp_listBalances" }, async () => {
       return HttpResponse.json({
         id: 1,

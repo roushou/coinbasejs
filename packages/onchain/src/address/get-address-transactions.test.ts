@@ -7,6 +7,7 @@ describe("get-address-transactions", () => {
   test("should get transactions of address", async () => {
     const rpcClient = createRpcClient({
       url: RPC_URL,
+      network: "base",
       apiKey: "API_KEY",
     });
     await getAddressTransactions(rpcClient, [

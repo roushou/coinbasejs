@@ -7,6 +7,7 @@ describe("get-balances", () => {
   test("should get balances", async () => {
     const rpcClient = createRpcClient({
       url: RPC_URL,
+      network: "base",
       apiKey: "API_KEY",
     });
     await getBalances(rpcClient, [

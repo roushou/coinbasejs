@@ -21,9 +21,10 @@ export type RpcClient = {
 
 export type RpcClientConfig = {
   apiKey: string;
+  network: "base" | "base-sepolia";
   /**
    * Coinbase platform RPC endpoint.
-   * Defaults to `https://api.developer.coinbase.com/rpc/v1/base`
+   * Defaults to `https://api.developer.coinbase.com/rpc/v1`
    */
   url?: string;
 };
@@ -32,24 +33,27 @@ export type RpcClientConfig = {
  * @returns The RPC client
  *
  * @param apiKey - Your API key
- * @param url - Your RPC url. Defaults to `https://api.developer.coinbase.com/rpc/v1/base`
+ * @param url - Your RPC url. Defaults to `https://api.developer.coinbase.com/rpc/v1`
  *
  * @example
  *
  * const rpcClient = createRpcClient({
  *   apiKey: API_KEY,
+ *   network: "base",
  *   rpcUrl: "https://api.developer.coinbase.com/rpc/v1/base",
  * });
  *
  */
 export function createRpcClient({
   apiKey,
+  network,
   url = RPC_URL,
 }: RpcClientConfig): RpcClient {
+  const rpcUrl = `${url}/${network}`;
   return {
-    __url: url,
+    __url: rpcUrl,
     request: async (config) => {
-      return await http.post(`${url}/${apiKey}`, {
+      return await http.post(`${rpcUrl}/${apiKey}`, {
         body: JSON.stringify({
           jsonrpc: "2.0",
           id: 1,

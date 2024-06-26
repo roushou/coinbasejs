@@ -90,12 +90,15 @@ $ npm install @coinbasejs/onchain
 
 ### 2. Create your client
 
-Create your client by passing it your API key. If needed, you can also pass your `RPC URL`. Otherwise it will default to `https://api.developer.coinbase.com/rpc/v1/base`.
+Create your client by passing it your API key. If needed, you can also pass your `RPC URL`. Otherwise it will default to `https://api.developer.coinbase.com/rpc/v1`.
 
 ```ts
 import { createClient } from "@coinbasejs/onchain";
 
-const client = createClient({ apiKey: "API_KEY" });
+const client = createClient({
+  apiKey: "API_KEY",
+  network: "base",
+});
 ```
 
 ### 3. Send your request
@@ -103,9 +106,12 @@ const client = createClient({ apiKey: "API_KEY" });
 ```ts
 import { createClient } from "@coinbasejs/sdk/commerce";
 
-const client = createClient({ apiKey: "API_KEY" });
+const client = createClient({
+  apiKey: "API_KEY",
+  network: "base",
+});
 
-const response = await client.getBalances([ // [!code focus:8]
+const response = await client.getBalances([ // [!code focus:6]
   {
     address: "0x5ff137d4b0fdcd49dca30c7cf57e578a026d2789",
     pageSize: 1,

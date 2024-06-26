@@ -26,13 +26,14 @@ $ npm install @coinbasejs/onchain
 
 ## Usage
 
-You can use your own RPC by passing its url in `createClient`. Otherwise it defaults to the RPC provided by Coinbase `https://api.developer.coinbase.com/rpc/v1/base`.
+You can use your own RPC by passing its url in `createClient`. Otherwise it defaults to the RPC provided by Coinbase `https://api.developer.coinbase.com/rpc/v1`.
 
 ```ts
 import { createClient } from "@coinbasejs/onchain";
 
 const client = createClient({
   apiKey: "API_KEY",
+  network: "base",
   rpcUrl: "https://your.rpc.com",
 });
 ```
@@ -44,6 +45,7 @@ const client = createClient({
 ```ts
 export type ClientConfig = {
   apiKey: string;
+  network: "base" | "base-sepolia";
   rpcUrl?: string;
 };
 ```

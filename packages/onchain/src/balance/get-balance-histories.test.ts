@@ -7,6 +7,7 @@ describe("get-balance-histories", () => {
   test("should get balance histories", async () => {
     const rpcClient = createRpcClient({
       url: RPC_URL,
+      network: "base",
       apiKey: "API_KEY",
     });
     await getBalancehistories(rpcClient, [

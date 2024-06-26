@@ -5,7 +5,7 @@ import { withRpcMethod } from "./predicates";
 
 export const handlers = [
   http.post<PathParams, { method: string }, DefaultBodyType>(
-    `${RPC_URL}/API_KEY`,
+    `${RPC_URL}/base/API_KEY`,
     withRpcMethod({ method: "eth_supportedEntryPoints" }, async () => {
       return HttpResponse.json({
         id: 1,
@@ -15,7 +15,7 @@ export const handlers = [
     }),
   ),
   http.post<PathParams, { method: string }, DefaultBodyType>(
-    `${RPC_URL}/API_KEY`,
+    `${RPC_URL}/base/API_KEY`,
     withRpcMethod({ method: "eth_getUserOperationByHash" }, async () => {
       return HttpResponse.json({
         id: 1,
@@ -26,7 +26,7 @@ export const handlers = [
     }),
   ),
   http.post<PathParams, { method: string }, DefaultBodyType>(
-    `${RPC_URL}/API_KEY`,
+    `${RPC_URL}/base/API_KEY`,
     withRpcMethod({ method: "eth_getUserOperationReceipt" }, async () => {
       return HttpResponse.json({
         id: 1,

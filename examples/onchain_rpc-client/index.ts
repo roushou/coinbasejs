@@ -3,7 +3,10 @@ import { createRpcClient } from "@coinbasejs/onchain";
 const apiKey = process.env.API_KEY;
 if (!apiKey) throw new Error("API_KEY not found");
 
-const rpc = createRpcClient({ apiKey });
+const rpc = createRpcClient({
+  apiKey,
+  network: "base-sepolia",
+});
 
 const response = await rpc.request({
   method: "cdp_listBalances",

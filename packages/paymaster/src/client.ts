@@ -22,7 +22,7 @@ import {
   type SendUserOperationResponse,
   sendUserOperation,
 } from "./bundler/send-user-operation";
-import { createRpcClient } from "./rpc";
+import { type RpcClientConfig, createRpcClient } from "./rpc";
 import {
   type SponsorUserOperationParameters,
   type SponsorUserOperationResponse,
@@ -98,9 +98,10 @@ export type Client = {
 
 export type ClientConfig = {
   apiKey: string;
+  network: RpcClientConfig["network"];
   /**
    * Coinbase platform RPC endpoint.
-   * Defaults to `https://api.developer.coinbase.com/rpc/v1/base`
+   * Defaults to `https://api.developer.coinbase.com/rpc/v1`
    */
   rpcUrl?: string;
 };
@@ -109,19 +110,22 @@ export type ClientConfig = {
  * @returns The Client
  *
  * @param apiKey - Your API key
- * @param rpcUrl - Your RPC url. Defaults to `https://api.developer.coinbase.com/rpc/v1/base`
+ * @param network - The network to connect to
+ * @param rpcUrl - Your RPC url. Defaults to `https://api.developer.coinbase.com/rpc/v1`
  *
  * @example
  *
  * const client = createClient({
  *   apiKey: API_KEY,
- *   rpcUrl: "https://api.developer.coinbase.com/rpc/v1/base",
+ *   network: "base",
+ *   rpcUrl: "https://api.developer.coinbase.com/rpc/v1",
  * });
  *
  */
 export function createClient(config: ClientConfig): Client {
   const rpcClient = createRpcClient({
     apiKey: config.apiKey,
+    network: config.network,
     url: config.rpcUrl,
   });
 

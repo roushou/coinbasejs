@@ -5,7 +5,7 @@ import { withRpcMethod } from "./predicates";
 
 export const handlers = [
   http.post<PathParams, { method: string }, DefaultBodyType>(
-    `${RPC_URL}/API_KEY`,
+    `${RPC_URL}/base/API_KEY`,
     withRpcMethod({ method: "cdp_listAddressTransactions" }, async () => {
       return HttpResponse.json({
         id: 1,
