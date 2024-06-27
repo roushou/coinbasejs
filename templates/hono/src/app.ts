@@ -6,6 +6,10 @@ import { z } from "zod";
 
 const app = new Hono();
 
+app.get("/_health", (ctx) => {
+  return ctx.text("healthy");
+});
+
 app.use("*", prettyJSON());
 
 app.use("*", async (ctx, next) => {
@@ -15,10 +19,6 @@ app.use("*", async (ctx, next) => {
   });
   ctx.set("onchain", client);
   await next();
-});
-
-app.get("/_health", (ctx) => {
-  return ctx.text("healthy");
 });
 
 // /balances/0x838aD0EAE54F99F1926dA7C3b6bFbF617389B4D9?pretty
