@@ -14,7 +14,7 @@ Currently the following products are supported:
 
 - [Commerce](https://docs.cdp.coinbase.com/commerce-onchain/docs/welcome/): `@coinbasejs/commerce`
 - [Onchain](https://docs.cdp.coinbase.com/onchain-data/docs/welcome/): `@coinbasejs/onchain`
-- [paymaster](https://docs.cdp.coinbase.com/node/docs/paymaster-bundler-qs/): `@coinbasejs/paymaster`
+- [Paymaster](https://docs.cdp.coinbase.com/node/docs/paymaster-bundler-qs/): `@coinbasejs/paymaster`
 
 ## Installation
 

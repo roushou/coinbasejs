@@ -34,7 +34,7 @@ Currently coinbasejs supports the following products.
 
 - [Commerce](https://docs.cdp.coinbase.com/commerce-onchain/docs/welcome/): `@coinbasejs/commerce`
 - [Onchain](https://docs.cdp.coinbase.com/onchain-data/docs/welcome/): `@coinbasejs/onchain`
-- [paymaster](https://docs.cdp.coinbase.com/node/docs/paymaster-bundler-qs/): `@coinbasejs/paymaster`
+- [Paymaster](https://docs.cdp.coinbase.com/node/docs/paymaster-bundler-qs/): `@coinbasejs/paymaster`
 
 The all-in-one package `@coinbasejs/sdk` is available if you intend to use many Coinbase products. This is basically a re-export of all the other packages.
 
