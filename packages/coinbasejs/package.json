@@ -23,7 +23,12 @@
   "keywords": [
     "coinbase",
     "coinbase platform",
-    "coinbase developer platform"
+    "coinbase developer platform",
+    "commerce",
+    "cryptocurrency",
+    "onchain",
+    "paymaster",
+    "typescript"
   ],
   "scripts": {
     "build": "pnpm clean && tsup",
@@ -64,10 +69,7 @@
     },
     "./package.json": "./package.json"
   },
-  "files": [
-    "src",
-    "dist"
-  ],
+  "files": ["src", "dist"],
   "engine": {
     "node": "^18.0.0 || >=20.0.0"
   }

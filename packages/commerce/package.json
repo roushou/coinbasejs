@@ -20,7 +20,14 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": ["coinbase", "coinbase platform", "coinbase developer platform"],
+  "keywords": [
+    "coinbase",
+    "coinbase platform",
+    "coinbase developer platform",
+    "commerce",
+    "onchain",
+    "typescript"
+  ],
   "scripts": {
     "build": "pnpm clean && tsup",
     "clean": "rimraf ./dist",
