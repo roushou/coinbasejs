@@ -14,6 +14,9 @@ export async function get<TResponse>(
       ...options?.headers,
     },
   });
+  if (!resp.ok) {
+    throw new Error(`GET: request to ${url} failed`);
+  }
   return (await resp.json()) as TResponse;
 }
 
@@ -29,5 +32,8 @@ export async function post<TResponse>(
       ...options?.headers,
     },
   });
+  if (!resp.ok) {
+    throw new Error(`POST: request to ${url} failed`);
+  }
   return (await resp.json()) as TResponse;
 }
