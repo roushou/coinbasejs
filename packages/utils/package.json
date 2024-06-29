@@ -1,13 +1,15 @@
 {
   "name": "@coinbasejs/utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Coinbase Developer Platform Utils package",
   "author": "roushou <roushou9@gmail.com>",
   "license": "MIT",
   "private": true,
   "homepage": "https://github.com/roushou/coinbasejs#readme",
   "type": "module",
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "scripts": {
     "typecheck": "tsc --noEmit"
   },

@@ -53,7 +53,10 @@
     },
     "./package.json": "./package.json"
   },
-  "files": ["src", "dist"],
+  "files": [
+    "src",
+    "dist"
+  ],
   "engine": {
     "node": "^18.0.0 || >=20.0.0"
   }
