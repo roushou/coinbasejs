@@ -23,6 +23,12 @@ export default defineConfig({
         rel: "noopener noreferrer",
       },
       {
+        text: "Templates",
+        link: "https://github.com/roushou/coinbasejs/tree/main/templates",
+        target: "_blank",
+        rel: "noopener noreferrer",
+      },
+      {
         text: `v${version}`,
         link: `https://github.com/roushou/coinbasejs/releases/tag/@coinbasejs/sdk@${version}`,
       },
