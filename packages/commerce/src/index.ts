@@ -3,6 +3,7 @@ export type { Client, ClientConfig } from "./client";
 export { createCharge, getCharge, getCharges } from "./charge";
 export type {
   Charge,
+  ChargePricing,
   ChargePricingType,
   CreateChargeParameters,
   CreateChargeResponse,

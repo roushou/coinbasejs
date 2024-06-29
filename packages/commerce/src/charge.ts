@@ -30,14 +30,16 @@ export async function getCharges(apiKey: string): Promise<GetChargesResponse> {
   });
 }
 
+export type ChargePricing = {
+  amount: string;
+  currency: string;
+};
+
 export type CreateChargeParameters = {
   name: string;
   description: string;
   pricing_type: ChargePricingType;
-  local_price: {
-    amount: string;
-    currency: string;
-  };
+  local_price: ChargePricing;
 };
 
 export type CreateChargeResponse = {
@@ -63,12 +65,8 @@ export type Charge = {
   brand_color: string;
   brand_logo_url: string;
   charge_kind: "WEB3";
-  checkout: {
-    id: string;
-  };
   code: string;
   collected_email: boolean;
-  confirmed_at: string;
   created_at: string;
   description: string;
   expires_at: string;
@@ -81,14 +79,8 @@ export type Charge = {
   // TODO: check type
   payments: string[];
   pricing: {
-    local: {
-      amount: string;
-      currency: string;
-    };
-    settlement: {
-      amount: string;
-      currency: string;
-    };
+    local: ChargePricing;
+    settlement: ChargePricing;
   };
   pricing_type: ChargePricingType;
   pwcb_only: boolean;
