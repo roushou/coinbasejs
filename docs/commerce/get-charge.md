@@ -27,12 +27,8 @@ type Charge = {
   brand_color: string;
   brand_logo_url: string;
   charge_kind: "WEB3";
-  checkout: {
-    id: string;
-  };
   code: string;
   collected_email: boolean;
-  confirmed_at: string;
   created_at: string;
   description: string;
   expires_at: string;
@@ -51,7 +47,7 @@ type Charge = {
       currency: string;
     };
   };
-  pricing_type: ChargePricingType;
+  pricing_type: "fixed_price" | "no_price";
   pwcb_only: boolean;
   redirects: {
     cancel_url: string;
