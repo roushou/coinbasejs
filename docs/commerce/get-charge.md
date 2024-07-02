@@ -56,10 +56,10 @@ type Charge = {
   };
   support_email: string;
   third_party_provider: string;
-  timeline: {
+  timeline: Array<{
     status: "COMPLETED" | "EXPIRED" | "FAILED" | "NEW" | "PENDING" | "SIGNED";
     time: string;
-  };
+  }>;
   web3_data: {
     contract_caller_request_id: string;
     failure_events: Array<{
