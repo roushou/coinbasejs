@@ -15,7 +15,11 @@ export default defineConfig({
     },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: "Guide", link: "/introduction", activeMatch: "/introduction" },
+      {
+        text: "Guide",
+        link: "/introduction/getting-started",
+        activeMatch: "/introduction",
+      },
       {
         text: "Examples",
         link: "https://github.com/roushou/coinbasejs/tree/main/examples",
