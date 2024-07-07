@@ -1,5 +1,11 @@
 # @coinbasejs/commerce
 
+## 0.1.3
+
+### Patch Changes
+
+- a0b3446: chore(commerce): extract `TimelineStatus` type
+
 ## 0.1.2
 
 ### Patch Changes
