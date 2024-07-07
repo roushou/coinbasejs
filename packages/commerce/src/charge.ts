@@ -61,6 +61,14 @@ export async function createCharge(
 
 export type ChargePricingType = "fixed_price" | "no_price";
 
+export type TimelineStatus =
+  | "COMPLETED"
+  | "EXPIRED"
+  | "FAILED"
+  | "NEW"
+  | "PENDING"
+  | "SIGNED";
+
 export type Charge = {
   brand_color: string;
   brand_logo_url: string;
@@ -92,7 +100,7 @@ export type Charge = {
   support_email: string;
   third_party_provider: string;
   timeline: Array<{
-    status: "COMPLETED" | "EXPIRED" | "FAILED" | "NEW" | "PENDING" | "SIGNED";
+    status: TimelineStatus;
     time: string;
   }>;
   web3_data: {

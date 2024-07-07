@@ -9,6 +9,7 @@ export type {
   CreateChargeResponse,
   GetChargeResponse,
   GetChargesResponse,
+  TimelineStatus,
 } from "./charge";
 export { createCheckout, getCheckout, getCheckouts } from "./checkout";
 export type {
