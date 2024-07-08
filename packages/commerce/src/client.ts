@@ -38,38 +38,65 @@ export function createClient(config: ClientConfig): Client {
   const client: Client = {
     __url: url,
     createCharge: async (parameters) => {
-      const response = await createCharge(parameters, config.apiKey);
+      const response = await createCharge(parameters, {
+        apiKey: config.apiKey,
+        baseUrl: url,
+      });
       return response.data;
     },
     createCheckout: async (parameters) => {
-      const response = await createCheckout(parameters, config.apiKey);
+      const response = await createCheckout(parameters, {
+        apiKey: config.apiKey,
+        baseUrl: url,
+      });
       return response.data;
     },
     getCharge: async (id) => {
-      const response = await getCharge(id, config.apiKey);
+      const response = await getCharge(id, {
+        apiKey: config.apiKey,
+        baseUrl: url,
+      });
       return response.data;
     },
     getCharges: async () => {
-      const response = await getCharges(config.apiKey);
+      const response = await getCharges({
+        apiKey: config.apiKey,
+        baseUrl: url,
+      });
       return response.data;
     },
     getCheckout: async (id) => {
-      const response = await getCheckout(id, config.apiKey);
+      const response = await getCheckout(id, {
+        apiKey: config.apiKey,
+        baseUrl: url,
+      });
       return response.data;
     },
     getCheckouts: async () => {
-      const response = await getCheckouts(config.apiKey);
+      const response = await getCheckouts({
+        apiKey: config.apiKey,
+        baseUrl: url,
+      });
       return response.data;
     },
     getEvent: async (id) => {
-      const response = await getEvent(id, config.apiKey);
+      const response = await getEvent(id, {
+        apiKey: config.apiKey,
+      });
       return response.data;
     },
     getEvents: async () => {
-      const response = await getEvents(config.apiKey);
+      const response = await getEvents({
+        apiKey: config.apiKey,
+      });
       return response.data;
     },
   };
 
   return client;
 }
+
+export type RequestConfig = {
+  apiKey: string;
+  baseUrl?: string;
+};

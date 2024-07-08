@@ -1,6 +1,7 @@
 import * as http from "@coinbasejs/utils/http";
 import type { Charge } from "./charge";
 import type { Checkout } from "./checkout";
+import type { RequestConfig } from "./client";
 import { BASE_URL } from "./constants";
 
 export type GetEventResponse = {
@@ -10,11 +11,12 @@ export type GetEventResponse = {
 
 export async function getEvent(
   id: string,
-  apiKey: string,
+  config: RequestConfig,
 ): Promise<GetEventResponse> {
-  return await http.get(`${BASE_URL}/events/${id}`, {
+  const baseUrl = config.baseUrl ?? BASE_URL;
+  return await http.get(`${baseUrl}/events/${id}`, {
     headers: {
-      "X-CC-Api-Key": apiKey,
+      "X-CC-Api-Key": config.apiKey,
     },
   });
 }
@@ -34,10 +36,13 @@ export type GetEventsResponse = {
   data: Array<Event>;
 };
 
-export async function getEvents(apiKey: string): Promise<GetEventsResponse> {
-  return await http.get(`${BASE_URL}/events`, {
+export async function getEvents(
+  config: RequestConfig,
+): Promise<GetEventsResponse> {
+  const baseUrl = config.baseUrl ?? BASE_URL;
+  return await http.get(`${baseUrl}/events`, {
     headers: {
-      "X-CC-Api-Key": apiKey,
+      "X-CC-Api-Key": config.apiKey,
     },
   });
 }

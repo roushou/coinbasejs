@@ -1,4 +1,5 @@
 import * as http from "@coinbasejs/utils/http";
+import type { RequestConfig } from "./client";
 import { BASE_URL } from "./constants";
 
 export type GetChargeResponse = {
@@ -8,11 +9,12 @@ export type GetChargeResponse = {
 
 export async function getCharge(
   id: string,
-  apiKey: string,
+  config: RequestConfig,
 ): Promise<GetChargeResponse> {
-  return await http.get(`${BASE_URL}/charges/${id}`, {
+  const baseUrl = config.baseUrl ?? BASE_URL;
+  return await http.get(`${baseUrl}/charges/${id}`, {
     headers: {
-      "X-CC-Api-Key": apiKey,
+      "X-CC-Api-Key": config.apiKey,
     },
   });
 }
@@ -22,10 +24,13 @@ export type GetChargesResponse = {
   warnings: string[];
 };
 
-export async function getCharges(apiKey: string): Promise<GetChargesResponse> {
-  return await http.get(`${BASE_URL}/charges`, {
+export async function getCharges(
+  config: RequestConfig,
+): Promise<GetChargesResponse> {
+  const baseUrl = config.baseUrl ?? BASE_URL;
+  return await http.get(`${baseUrl}/charges`, {
     headers: {
-      "X-CC-Api-Key": apiKey,
+      "X-CC-Api-Key": config.apiKey,
     },
   });
 }
@@ -49,11 +54,12 @@ export type CreateChargeResponse = {
 
 export async function createCharge(
   parameters: CreateChargeParameters,
-  apiKey: string,
+  config: RequestConfig,
 ): Promise<CreateChargeResponse> {
-  return await http.post(`${BASE_URL}/charges`, {
+  const baseUrl = config.baseUrl ?? BASE_URL;
+  return await http.post(`${baseUrl}/charges`, {
     headers: {
-      "X-CC-Api-Key": apiKey,
+      "X-CC-Api-Key": config.apiKey,
     },
     body: JSON.stringify(parameters),
   });

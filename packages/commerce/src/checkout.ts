@@ -1,4 +1,5 @@
 import * as http from "@coinbasejs/utils/http";
+import type { RequestConfig } from "./client";
 import { BASE_URL } from "./constants";
 
 type GetCheckoutResponse = {
@@ -8,11 +9,12 @@ type GetCheckoutResponse = {
 
 export async function getCheckout(
   id: string,
-  apiKey: string,
+  config: RequestConfig,
 ): Promise<GetCheckoutResponse> {
-  return await http.get(`${BASE_URL}/checkouts/${id}`, {
+  const baseUrl = config.baseUrl ?? BASE_URL;
+  return await http.get(`${baseUrl}/checkouts/${id}`, {
     headers: {
-      "X-CC-Api-Key": apiKey,
+      "X-CC-Api-Key": config.apiKey,
     },
   });
 }
@@ -23,11 +25,12 @@ type GetCheckoutsResponse = {
 };
 
 export async function getCheckouts(
-  apiKey: string,
+  config: RequestConfig,
 ): Promise<GetCheckoutsResponse> {
-  return await http.get(`${BASE_URL}/checkouts`, {
+  const baseUrl = config.baseUrl ?? BASE_URL;
+  return await http.get(`${baseUrl}/checkouts`, {
     headers: {
-      "X-CC-Api-Key": apiKey,
+      "X-CC-Api-Key": config.apiKey,
     },
   });
 }
@@ -59,11 +62,12 @@ export type CreateCheckoutResponse = {
 
 export async function createCheckout(
   parameters: CreateCheckoutParameters,
-  apiKey: string,
+  config: RequestConfig,
 ): Promise<CreateCheckoutResponse> {
-  return await http.post(`${BASE_URL}/checkouts`, {
+  const baseUrl = config.baseUrl ?? BASE_URL;
+  return await http.post(`${baseUrl}/checkouts`, {
     headers: {
-      "X-CC-Api-Key": apiKey,
+      "X-CC-Api-Key": config.apiKey,
     },
     body: JSON.stringify(parameters),
   });
