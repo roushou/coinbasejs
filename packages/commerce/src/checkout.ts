@@ -2,7 +2,7 @@ import * as http from "@coinbasejs/utils/http";
 import type { RequestConfig } from "./client";
 import { BASE_URL } from "./constants";
 
-type GetCheckoutResponse = {
+export type GetCheckoutResponse = {
   data: Checkout;
   warning: string[];
 };
@@ -19,7 +19,7 @@ export async function getCheckout(
   });
 }
 
-type GetCheckoutsResponse = {
+export type GetCheckoutsResponse = {
   data: Checkout[];
   warning: string[];
 };
@@ -35,7 +35,7 @@ export async function getCheckouts(
   });
 }
 
-type CheckoutRequestInfo =
+export type CheckoutRequestInfo =
   | "name"
   | "email"
   | "address"

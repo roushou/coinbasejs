@@ -14,8 +14,11 @@ export type {
 export { createCheckout, getCheckout, getCheckouts } from "./checkout";
 export type {
   CheckoutPricingType,
+  CheckoutRequestInfo,
   CreateCheckoutParameters,
   CreateCheckoutResponse,
+  GetCheckoutResponse,
+  GetCheckoutsResponse,
 } from "./checkout";
 export { getEvent, getEvents } from "./events";
 export type { Event, GetEventResponse, GetEventsResponse } from "./events";
