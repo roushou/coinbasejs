@@ -1,5 +1,12 @@
 # @coinbasejs/commerce
 
+## 0.1.4
+
+### Patch Changes
+
+- 45d0bba: fix(commerce): make base url correctly fallback to default base url
+- ab61a17: fix(commerce): export Checkout types
+
 ## 0.1.3
 
 ### Patch Changes
